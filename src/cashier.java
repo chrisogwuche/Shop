@@ -2,6 +2,7 @@ import java.util.ArrayList;
 
 public class cashier extends staff{
     ArrayList<product> confirmed_ItemList = new ArrayList<>();
+    customer customer = new customer();
 
     public cashier(){}
     public cashier(String cashier_id,String cashier_name,int age ) {
@@ -44,10 +45,19 @@ public class cashier extends staff{
             total_selling_price += (a.selling_price * a.unit);
             total_cost_price += (a.cost_price* a.unit);
         }
-        setTotal_cost(total_cost_price);
-        setTotal_sells(total_selling_price);
+        if(customer.getMoney_at_hand() >= total_selling_price){
+            setTotal_cost(total_cost_price);
+            setTotal_sells(total_selling_price);
+            int customer_balance = customer.getMoney_at_hand()-total_selling_price;
+            customer.setMoney_at_hand(customer_balance);
 
-        System.out.println("RECEIPT \n" +receipt +"\n" +"TOTAL: "+total_selling_price +"$");
+            System.out.println("RECEIPT \n" +receipt +"\n" +"TOTAL: "+total_selling_price +"$");
+            System.out.println( "Your balance: "+customer_balance+"$");
+        }
+        else{
+            System.out.println("You do not have sufficient money in your wallet. Please add money.");
+        }
+
     }
     public void check(){
         for(product a: confirmed_ItemList){
