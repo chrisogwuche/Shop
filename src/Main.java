@@ -1,7 +1,6 @@
 import java.util.*;
 public class Main {
     public static void main(String[] args) {
-//        System.out.println("Hello world!");
         ArrayList<Job_applicants> jp = new ArrayList<>();
 
         Job_applicants c = new Job_applicants("12","chris",24,2);
@@ -17,8 +16,38 @@ public class Main {
         manager mg = new manager();
         mg.setQualified_applicants();
         mg.hireCashier("2");
+        // NB: the newly generated id for cashier is 10
+        mg.fireCashier("10");
         mg.check();
 
 
+//        ArrayList<product> jp = new ArrayList<>();
+//        product pd = new product("12","milk",5,50,55);
+//        product h = new product("11","garri",3,10,15);
+//        product d = new product("10","Bonvinta",5,60,70);
+//
+//        jp.add(pd);
+//        jp.add(h);
+//        jp.add(d);
+//
+//        store s = new store(jp);
+//
+//        ArrayList<product> buy = new ArrayList<>();
+//        product r = new product("12","milk",5);
+//        product ri = new product("10","Bonvinta",2);
+//        buy.add(r);
+//        buy.add(ri);
+//
+//        cashier cash = new cashier();
+//        cash.setConfirmed_ItemList(buy);
+//        cash.check();
+//        cash.sellItems();
+//
+//        store store = new store();
+//        store.setProfit_loss();
+//        store.setAccount_balance();
+//
+//        manager mg = new manager();
+//        mg.check();
     }
 }

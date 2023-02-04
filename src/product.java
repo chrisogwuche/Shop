@@ -13,7 +13,7 @@ public class product{
         this.cost_price = cost_price;
         this.selling_price = selling_price;
     }
-    public void items_to_buy(String product_id,String product_name,int unit){
+    public product(String product_id,String product_name,int unit){
         this.product_id = product_id;
         this.product_name = product_name;
         this.unit = unit;

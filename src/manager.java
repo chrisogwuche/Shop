@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Iterator;
 
 public class manager extends staff{
     static int Id_generator = 10;
@@ -14,10 +15,6 @@ public class manager extends staff{
         for(Job_applicants a: applicantList){
             flag = (a.age > 17 && a.age < 36)? true:false;
            if(flag == true && a.years_of_experience > 1){
-//               System.out.println(a.age);
-//               System.out.println(a.applicant_name);
-//               System.out.println(a.applicant_id);
-//               System.out.println(a.years_of_experience);
                qualified_applicants.add(a);
 
            }
@@ -31,12 +28,31 @@ public class manager extends staff{
             }
         }
     }
+    public void fireCashier(String cashier_id){
+        Iterator itr = cashierList.iterator();
+        while(itr.hasNext()){
+            cashier x = (cashier) itr.next();
+            if(x.staff_id.equals(cashier_id)){
+                System.out.println("Cashier "+ x.staff_name +" with staff ID:" +x.staff_id+" is fired.");
+                itr.remove();
+                break;
+            }
+        }
+    }
+
     public void check(){
         for(cashier a: cashierList){
             System.out.println(a.age);
             System.out.println(a.staff_id);
             System.out.println(a.staff_name);
         }
+
+//        System.out.println("account balance: "+getAccount_balance());
+//        System.out.println("profit_loss: "+getProfit_loss());
+//        System.out.println("total cost: "+getTotal_cost());
+//        System.out.println("total sells: "+getTotal_sells());
+
     }
+
 
 }
