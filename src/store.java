@@ -5,8 +5,8 @@ public class store {
     static ArrayList<Job_applicants> applicantList = new ArrayList<>();
     private static int account_balance = 0;
     private static int profit_loss = 0;
-    private static int total_sells;
-    private static int total_cost;
+    private static int total_sells = 0;
+    private static int total_cost = 0;
 
     public store(){}
     public store(ArrayList<product> productList){
